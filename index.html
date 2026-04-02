@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/test1.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/adaptation.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
@@ -21,15 +21,13 @@
         </a>
     </div>
 
-    <input type="checkbox" id="menu-toggle">
+    <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <label for="menu-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
-
-    <nav class="menu">
+    <nav class="menu" id="menu">
         <ul>
             <li><a href="#About">О нас</a></li>
             <li><a href="#Services">Услуги</a></li>

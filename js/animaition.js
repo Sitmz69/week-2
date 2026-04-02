@@ -1,6 +1,16 @@
+const burgerBtn = document.getElementById('burgerBtn');
+const menu = document.getElementById('menu');
+
+if (burgerBtn && menu) {
+  burgerBtn.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+    burgerBtn.classList.toggle('burger--active');
+  });
+}
+
 window.addEventListener('scroll', function() {
   var btn = document.querySelector('.to-top-btn');
-  if (window.pageYOffset > 300) { // Появляется после 300px
+  if (window.pageYOffset > 300) {
     btn.classList.add('show');
   } else {
     btn.classList.remove('show');
@@ -39,7 +49,6 @@ form.addEventListener('submit', function(e) {
 
   let errors = [];
 
-  // Имя
   const nameValue = name.value.trim();
   const parts = nameValue.split(' ');
 
@@ -61,20 +70,17 @@ form.addEventListener('submit', function(e) {
     name.classList.add('error-field');
   }
 
-  // Email
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
     errors.push('Некорректный email');
     email.classList.add('error-field');
   }
 
-  // Телефон
   const digits = phone.value.replace(/\D/g, '');
   if (digits.length < 10 || digits.length > 15) {
     errors.push('Телефон: 10-15 цифр');
     phone.classList.add('error-field');
   }
 
-  // Сообщение
   if (message.value.trim() === '') {
     errors.push('Введите сообщение');
     message.classList.add('error-field');
@@ -85,7 +91,6 @@ form.addEventListener('submit', function(e) {
     message.classList.add('error-field');
   }
 
-  // Антиспам
   if (Date.now() - lastSubmit < 5000) {
     errors.push('Подождите перед повторной отправкой');
   }
@@ -97,7 +102,6 @@ form.addEventListener('submit', function(e) {
 
   lastSubmit = Date.now();
 
-  // XSS защита
   function sanitize(str) {
     return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }

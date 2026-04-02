@@ -35,15 +35,14 @@ header {
     text-decoration: none;
 }
 
-#menu-toggle {
-    display: none;
-}
-
 .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .burger span {
@@ -51,6 +50,19 @@ header {
     height: 3px;
     background: white;
     display: block;
+    transition: 0.3s;
+}
+
+.burger--active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger--active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger--active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
 }
 
 .logo {
