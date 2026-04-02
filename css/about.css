@@ -1,0 +1,44 @@
+.about a,
+.about .active{
+  padding: 10px 8px;
+  margin: 5px;
+  border: 2px solid #1e293b;
+  border-radius: 50px;
+  text-transform: uppercase;
+  width: 150px;
+  height: auto;
+}
+
+.about p{
+  padding-bottom: 15px;
+}
+
+.about button {
+  margin: 8px;
+} 
+
+.about a {
+  transition: all 0.3s ease; 
+  list-style: none;
+}
+
+.about a:hover {
+  background-color: #414141;
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.about-img  img{
+  width: 500px;
+  height: 500px;
+  border-radius: 50px;
+  flex: 1;
+  text-align: center;
+  transition: transform 1.3s ease;
+}
+
+.about-img img:hover{
+  transform: rotate(5deg); 
+}

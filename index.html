@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютерные услуги</title>
+    <link rel="stylesheet" href="css/test1.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/adaptation.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    
+   <header>
+    <div class="logo">
+        <a href="">
+            <img src="img/gear.png" alt="Лого" width="70" height="70">
+        </a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#About">О нас</a></li>
+            <li><a href="#Services">Услуги</a></li>
+            <li><a href="#Products">Товары</a></li>
+            <li><a href="#Contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div id="top"></div>
+    
+    <main class="wid">
+        <section id="About">
+            <div class="container">
+                <div class="container-about">
+                    <div class="about">
+                        <h1>Компьютерные услуги</h1>
+                        <p>Профессиональный ремонт компьютерной техники, <br> а также сертифицированные комплектующие и аксессуары. <br> Всё это в одном месте с гарантией и быстрым обслуживанием.</p>
+                        <button><a href="#Services"> Заказать услугу</a></button>
+                        <button><a href="#Products"> Купить товар</a></button>
+                    </div>
+                    <div class="about-img">
+                        <img src="img/man-working-on-laptop.png" alt="Знакомство">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="Services">
+            <div class="container">
+                <h1>Услуги</h1>
+
+                    <div class="card">
+                    <div class="card-ysl">
+                        <img src="img/diag.webp" alt="Диагностика">   
+                        <h2>Диагностика</h2>
+                        <p class="">От 50руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div> 
+
+                    <div class="card-ysl">
+                        <img src="img/repair.jpg" alt="Ремонт">
+                        <h2>Ремонт</h2>
+                        <p class="">От 120руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>  
+
+                    <div class="card-ysl">
+                        <img src="img/clean.jpg" alt="Чистка"> 
+                         <h2>Чистка</h2>
+                         <p class="">От 90руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>    
+
+                     <div class="card-ysl">
+                        <img src="img/wind.webp" alt="Чистка"> 
+                         <h2>Обслуживание</h2>
+                         <p class="">От 100руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>   
+
+                </div>   
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="Products">
+            <div class="container">
+                <h1>Товары</h1>
+
+                    <div class="card">
+                       <div class="card-tov">
+                        <img src="img/disk.webp" alt="Жёсткий диск">
+                        <h2>Жёсткий диск <br> Samsung 1TB</h2>
+                        <p>250руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>
+
+                    <div class="card-tov">
+                        <img src="img/past.webp" alt="Термопаста">
+                        <h2>Термопаста MX-6</h2>
+                        <p>40руб за 4мг</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>
+                   
+                    <div class="card-tov">
+                        <img src="img/pam.webp" alt="Оперативная память">
+                        <h2>Оперативная память <br> Kingston 16Gb DDR4</h2>
+                        <p>125 руб </p>
+                        <button><a href="">Заказать</a></button>
+                    </div>
+                 
+                    <div class="card-tov">
+                        <img src="img/videoo.webp" alt="Видеокарта">
+                        <h2>Видеокарта Nvidia</h2>
+                        <p>1250руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>    
+                    
+                    <div class="card-tov">
+                        <img src="img/asus.webp" alt="Материнская плата">
+                        <h2>Материнская плата <br> Asus B650</h2>
+                        <p>850руб</p>
+                        <button><a href="">Заказать</a></button>
+                    </div>       
+                </div>        
+            </div>
+        </section>
+
+    </main>
+   
+    <div class="to-top-btn">
+        <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <img src="img/row.png" alt="Arrow Up">
+        </a>
+    </div>
+
+    <div class="mod-but">
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <form id="contactForm" class="contact-form">
+            <h2>Обратная связь</h2>
+
+            <input type="text" id="name" placeholder="Имя" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Телефон" required>
+            <textarea id="message" placeholder="Сообщение" required></textarea>
+
+            <button type="submit">Отправить</button>
+
+            <div id="formError" class="error"></div>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer id="Contacts">
+        <div class="container">
+            <div> 
+                <h2>Контактные данные</h2>
+                <p>Книга жалоб находится по адресу ул.Пушкина д.32</p>
+                <P>Телефон поддержки 24/7: +375(25)755-хх-хх</P>
+                <p>E-mail: servers@gmail.com </p>
+            </div>
+
+            <div class="but">        
+                <button id="openModalBtn">Обратная связь</button>
+            </div>
+        
+            <div class="knop">
+                <a href=""><img src="img/discord.png" alt=""></a>
+                <a href=""><img src="img/mail.png" alt=""></a>
+                <a href=""><img src="img/gmail.png" alt=""></a>
+            </div>
+        </div>   
+    </footer>
+    
+    <script src="js/animaition.js"></script>
+</body>
+</html>

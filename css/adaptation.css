@@ -1,0 +1,58 @@
+@media (max-width: 768px) {
+
+  .burger {
+      display: flex;
+  }
+
+  .menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: #222;
+
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s;
+  }
+
+  .menu ul {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 0;
+  }
+
+  #menu-toggle:checked ~ .menu {
+      max-height: 300px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .container-about {
+      flex-direction: column;
+      text-align: center;
+        
+  }
+
+  .about-img {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;  
+  }
+
+  .card-ysl,
+  .card-tov {
+      width: 100%;
+      max-width: 300px;
+  }
+
+    footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+ 
+}

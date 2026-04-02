@@ -1,0 +1,28 @@
+footer{
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: static;
+  align-items: center;
+  background-color: #0A1A2F;
+  color: white;
+}
+
+footer h2 {
+  color: white;
+}
+
+footer img {
+  height: 50px;
+  width: 50px;
+}
+
+.knop img {
+  transition: all 0.3s ease; 
+}
+
+.knop img:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
