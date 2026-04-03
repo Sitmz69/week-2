@@ -5,12 +5,18 @@ footer{
   flex-direction: row;
   position: static;
   align-items: center;
-  background-color: #0A1A2F;
-  color: white;
+  background-color: var(--header-bg);
+  color: #f1f5f9;
+  transition: background-color 0.3s ease;
 }
 
 footer h2 {
-  color: white;
+  color: #f1f5f9;
+  transition: color 0.3s ease;
+}
+
+footer p {
+  color: #f1f5f9;
 }
 
 footer img {

@@ -23,7 +23,7 @@
 }
 
 .about a:hover {
-  background-color: #414141;
+  background-color: #7c7c7c;
   color: white;
   transform: scale(1.05);
   cursor: pointer;

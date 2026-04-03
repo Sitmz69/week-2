@@ -14,10 +14,12 @@
 
 .card-ysl{
   border-radius: 20px;
-  box-shadow: 5px 5px 25px rgba(71, 71, 71, 0.596);
+  box-shadow: 0 4px 12px var(--shadow);
   height: auto;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
   list-style: none;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
 }
 
 .card a{
@@ -26,9 +28,10 @@
   margin-top: auto;
   border-radius: 50px;
   text-transform: uppercase;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
   width: 150px;
   height: auto;
+  color: var(--text-primary);
 }
 
 .card-ysl:hover {
@@ -37,7 +40,7 @@
 }
 
 .card a:hover{
-  background-color: #414141;
+  background-color: #7c7c7c;
   color: white;
   transform: scale(1.05);
   cursor: pointer;
@@ -48,8 +51,10 @@
   border-radius: 20px;
   box-shadow: 5px 5px 25px rgba(71, 71, 71, 0.596);
   height: auto;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
   list-style: none;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
 }
 
 .card-tov:hover {

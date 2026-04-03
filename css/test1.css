@@ -1,17 +1,52 @@
+:root {
+  --bg-primary: #323a46;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --card-bg: #1e293b;
+  --header-bg: #0f172a;
+  --menu-bg: #1e293b;
+  --hover-bg: #3b82f640;
+  --toggle-light: #f8fafc;
+  --toggle-dark: #334155;
+  --accent: #1f2a3b;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --card-bg: #ffffff;
+  --header-bg: #5a78be;
+  --menu-bg: #1e293b;
+  --hover-bg: #313d4e;
+  --toggle-light: #e2e8f0;
+  --toggle-dark: #cbd5e1;
+  --accent: #222e49;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
 a {
  text-decoration: none;
- color: #0A1A2F;
+ color: var(--text-primary);
+ transition: color 0.3s ease;
 }
 
 section{
   padding: 80px 0;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
-body { 
-  background: linear-gradient(135deg, #fefefe 0%, #f8f9ff 100%);
+body {
+  background: var(--bg-primary);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-  padding: 0; 
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s ease;
+  color: var(--text-primary);
 }
 
 .wid{
@@ -44,7 +79,8 @@ body {
 }
 
 h1, h2{
- color: #0A1A2F;
+ color: var(--text-primary);
+ transition: color 0.3s ease;
 }
 
 img {

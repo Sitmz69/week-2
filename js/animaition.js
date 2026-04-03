@@ -8,6 +8,31 @@ if (burgerBtn && menu) {
   });
 }
 
+// Переключение темы
+const themeToggle = document.querySelector('.checkbox');
+const html = document.documentElement;
+
+// Загрузка сохранённой темы
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  html.setAttribute('data-theme', 'light');
+  if (themeToggle) {
+    themeToggle.checked = true;
+  }
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      html.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
+
 window.addEventListener('scroll', function() {
   var btn = document.querySelector('.to-top-btn');
   if (window.pageYOffset > 300) {

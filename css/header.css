@@ -1,3 +1,5 @@
+
+
 header {
     display: flex;
     top: 0;
@@ -7,19 +9,18 @@ header {
     width: 100%;
     height: 75px;
     align-items: center;
-    background-color: #0A1A2F;
+    background-color: var(--header-bg);
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .menu {
     align-items: center;
-
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .menu ul {
     align-items: center;
-
     display: flex;
     gap: 20px;
     list-style: none;
@@ -36,8 +37,9 @@ header {
 }
 
 .menu a {
-    color: white;
+    color: #f1f5f9;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .burger {
@@ -53,7 +55,7 @@ header {
 .burger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #f1f5f9;
     display: block;
     transition: 0.3s;
 }
@@ -98,10 +100,74 @@ header {
 }
 
 ul li:hover {
-  background-color: #007bff8e;
-  color: white;
+  background-color: var(--hover-bg);
+  color: var(--text-primary);
   transform: scale(1.05);
   cursor: pointer;
   border-radius: 50px;
 }
 
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  margin-right: 20px;
+  --light: var(--toggle-light);
+  --dark: var(--toggle-dark);
+  --link: var(--accent);
+  --link-hover: var(--accent);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-color: var(--dark);
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 8px -3px 0px 0px var(--light);
+  box-shadow: inset 8px -3px 0px 0px var(--light);
+  background-color: var(--accent);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+  background-color: var(--accent);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
