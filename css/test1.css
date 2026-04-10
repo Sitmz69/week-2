@@ -4,6 +4,7 @@
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --card-bg: #1e293b;
+  --card-ostr-bg: #30415e8f;
   --header-bg: #0f172a;
   --menu-bg: #1e293b;
   --hover-bg: #3b82f640;
@@ -19,7 +20,8 @@
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --card-bg: #ffffff;
-  --header-bg: #5a78be;
+  --card-ostr-bg: #d2dbed71;
+  --header-bg: #4d66a1;
   --menu-bg: #1e293b;
   --hover-bg: #313d4e;
   --toggle-light: #e2e8f0;
@@ -67,7 +69,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;   
 }
 
 .container h1{
@@ -129,3 +132,8 @@ html {
   background: none;
   font-size: 15px;
 }
+
+.home {
+background: linear-gradient(#5a78bebb, #ffffff60);
+}
+

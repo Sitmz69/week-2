@@ -67,3 +67,15 @@
     width: 250px;
     text-align: center;
 }
+
+section.ostr{
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px;
+  box-shadow: 5px 5px 25px rgba(71, 71, 71, 0.596);
+  height: auto;
+  transition: all 0.3s ease;
+  list-style: none;
+  background-color: var(--card-ostr-bg);
+  color: var(--text-primary);
+}

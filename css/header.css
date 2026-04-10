@@ -10,6 +10,7 @@ header {
     height: 75px;
     align-items: center;
     background-color: var(--header-bg);
+      box-shadow: 5px 5px 15px rgba(71, 71, 71, 0.596);
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
