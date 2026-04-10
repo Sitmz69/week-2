@@ -8,11 +8,9 @@ if (burgerBtn && menu) {
   });
 }
 
-// Переключение темы
 const themeToggle = document.querySelector('.checkbox');
 const html = document.documentElement;
 
-// Загрузка сохранённой темы
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
   html.setAttribute('data-theme', 'light');
