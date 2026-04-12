@@ -195,7 +195,37 @@
             </div>
         </div>   
     </footer>
-    
+
+    <div class="chat-widget">
+        <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Открыть чат">
+            <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            <span class="chat-badge" id="chatBadge" style="display: none;">0</span>
+        </button>
+
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Чат-помощник</h3>
+                <div class="chat-header-actions">
+                    <button class="chat-clear-btn" id="chatClearBtn" title="Очистить историю">🗑️</button>
+                    <button class="chat-close-btn" id="chatCloseBtn" aria-label="Закрыть чат">&times;</button>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <textarea class="chat-input" id="chatInput" placeholder="Введите сообщение..." rows="1"></textarea>
+                <button class="chat-send-btn" id="chatSendBtn" aria-label="Отправить">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/chat.css">
     <script src="js/animaition.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
