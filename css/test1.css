@@ -1,139 +1,138 @@
-:root {
-  --bg-primary: #323a46;
-  --bg-secondary: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --card-bg: #1e293b;
-  --card-ostr-bg: #30415e8f;
-  --header-bg: #0f172a;
-  --menu-bg: #1e293b;
-  --hover-bg: #3b82f640;
-  --toggle-light: #f8fafc;
-  --toggle-dark: #334155;
-  --accent: #1f2a3b;
-  --shadow: rgba(0, 0, 0, 0.3);
+:root { /* Главные CSS-переменные (тёмная тема по умолчанию) */
+  --bg-primary: #323a46; /* основной фон страницы */
+  --bg-secondary: #1e293b; /* вторичный фон (карточки, блоки) */
+  --text-primary: #f1f5f9; /* основной цвет текста */
+  --text-secondary: #94a3b8; /* вторичный текст (подписи) */
+  --card-bg: #1e293b; /* фон карточек */
+  --card-ostr-bg: #30415e8f; /* полупрозрачный фон секций */
+  --header-bg: #0f172a; /* фон хедера */
+  --menu-bg: #1e293b; /* фон меню */
+  --hover-bg: #3b82f640; /* цвет при наведении */
+  --toggle-light: #f8fafc; /* цвет светлого переключателя */
+  --toggle-dark: #334155; /* цвет тёмного переключателя */
+  --accent: #1f2a3b; /* основной акцентный цвет */
+  --shadow: rgba(0, 0, 0, 0.3); /* тени */
 }
 
-[data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --card-bg: #ffffff;
-  --card-ostr-bg: #d2dbed71;
-  --header-bg: #4d66a1;
-  --menu-bg: #1e293b;
-  --hover-bg: #313d4e;
-  --toggle-light: #e2e8f0;
-  --toggle-dark: #cbd5e1;
-  --accent: #222e49;
-  --shadow: rgba(0, 0, 0, 0.1);
+[data-theme="light"] { /* Светлая тема (перекрывает root переменные) */
+  --bg-primary: #f8fafc; /* светлый фон */
+  --bg-secondary: #ffffff; /* белые блоки */
+  --text-primary: #1e293b; /* тёмный текст */
+  --text-secondary: #64748b; /* серый текст */
+  --card-bg: #ffffff; /* белые карточки */
+  --card-ostr-bg: #d2dbed71; /* светлый полупрозрачный фон */
+  --header-bg: #4d66a1; /* голубой хедер */
+  --menu-bg: #1e293b; /* меню остаётся тёмным */
+  --hover-bg: #313d4e; /* hover эффект */
+  --toggle-light: #e2e8f0; /* светлый переключатель */
+  --toggle-dark: #cbd5e1; /* серый переключатель */
+  --accent: #222e49; /* акцент */
+  --shadow: rgba(0, 0, 0, 0.1); /* мягкие тени */
 }
 
-a {
- text-decoration: none;
- color: var(--text-primary);
- transition: color 0.3s ease;
+a { /* ссылки */
+ text-decoration: none; /* убираем подчёркивание */
+ color: var(--text-primary); /* цвет текста ссылки */
+ transition: color 0.3s ease; /* плавное изменение цвета */
 }
 
-section{
-  padding: 80px 0;
-  background-color: var(--bg-primary);
-  transition: background-color 0.3s ease;
+section { /* все секции сайта */
+  padding: 80px 0; /* отступ сверху и снизу */
+  background-color: var(--bg-primary); /* фон секции */
+  transition: background-color 0.3s ease; /* плавный переход темы */
 }
 
-body {
-  background: var(--bg-primary);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background 0.3s ease;
-  color: var(--text-primary);
+body { /* основной стиль страницы */
+  background: var(--bg-primary); /* фон */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* шрифт */
+  margin: 0; /* убираем отступы */
+  padding: 0; /* убираем внутренние отступы */
+  transition: background 0.3s ease; /* плавная смена темы */
+  color: var(--text-primary); /* цвет текста */
 }
 
-.wid{
-   max-width: 1480px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center; 
+.wid { /* широкий контейнер */
+   max-width: 1480px; /* максимальная ширина */
+  margin: 0 auto; /* центрирование */
+  padding: 0 24px; /* боковые отступы */
+  text-align: center; /* выравнивание текста */
 }
 
-.container{
-  max-width: 1480px;
-  margin: 0 auto;
-  padding: 0 15px;
-  text-align: center;
-} 
-
-.container-about{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;   
+.container { /* основной контейнер */
+  max-width: 1480px; /* ограничение ширины */
+  margin: 0 auto; /* центр */
+  padding: 0 15px; /* отступы */
+  text-align: center; /* центр текста */
 }
 
-.container h1{
-  text-transform: uppercase;
+.container-about { /* блок "о нас" */
+  display: flex; /* flex-контейнер */
+  flex-wrap: wrap; /* перенос элементов */
+  align-items: center; /* выравнивание по вертикали */
+  justify-content: center; /* центрирование */
+  gap: 30px; /* расстояние между элементами */
 }
 
-.container p {
-  font-size: 20px;
+.container h1 { /* заголовки внутри контейнера */
+  text-transform: uppercase; /* ВСЕ ЗАГЛАВНЫЕ */
 }
 
-h1, h2{
- color: var(--text-primary);
- transition: color 0.3s ease;
+.container p { /* параграфы */
+  font-size: 20px; /* размер текста */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+h1, h2 { /* все заголовки */
+ color: var(--text-primary); /* цвет */
+ transition: color 0.3s ease; /* плавная смена темы */
 }
 
-.to-top-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #fefefe;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 6px rgb(0, 0, 0);
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  z-index: 1000;
+img { /* изображения */
+    max-width: 100%; /* адаптивная ширина */
+    height: auto; /* сохранение пропорций */
 }
 
-.to-top-btn.show {
-  opacity: 1;
-  visibility: visible;
+.to-top-btn { /* кнопка "наверх" */
+  position: fixed; /* фиксированная позиция */
+  bottom: 20px; /* снизу */
+  left: 20px; /* слева */
+  width: 50px; /* ширина */
+  height: 50px; /* высота */
+  background-color: #fefefe; /* белый фон */
+  border-radius: 50%; /* круглая */
+  justify-content: center; /* центр */
+  align-items: center; /* центр */
+  box-shadow: 0 2px 6px rgb(0, 0, 0); /* тень */
+  visibility: hidden; /* скрыта по умолчанию */
+  transition: all 0.3s ease-in-out; /* плавность */
+  opacity: 0; /* прозрачная */
+  z-index: 1000; /* поверх всего */
 }
 
-.to-top-btn img {
-  padding: 13px;
-  width: 24px;
-  height: 24px;
-  position: fixed;
+.to-top-btn.show { /* когда кнопка активна */
+  opacity: 1; /* видимая */
+  visibility: visible; /* показывается */
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-margin-top: 80px;
+.to-top-btn img { /* иконка стрелки */
+  padding: 13px; /* отступ */
+  width: 24px; /* ширина */
+  height: 24px; /* высота */
+  position: fixed; /* фиксированная позиция */
 }
 
-.container button{
-  padding-bottom: 15px;
-  border: none;     
-  outline: none;     
-  background: none;
-  font-size: 15px;
+html { /* глобальные настройки страницы */
+  scroll-behavior: smooth; /* плавный скролл */
+  scroll-margin-top: 80px; /* отступ при переходе по якорям */
 }
 
-.home {
-background: linear-gradient(#5a78bebb, #ffffff60);
+.container button { /* кнопки внутри контейнера */
+  padding-bottom: 15px; /* нижний отступ */
+  border: none; /* убираем рамку */
+  outline: none; /* убираем outline */
+  background: none; /* прозрачный фон */
+  font-size: 15px; /* размер текста */
 }
 
+.home { /* главный экран */
+background: linear-gradient(#5a78bebb, #ffffff60); /* градиентный фон */
+}

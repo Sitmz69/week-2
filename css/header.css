@@ -1,174 +1,171 @@
-
-
-header {
-    display: flex;
-    top: 0;
-    left: 0;
-    flex-direction: row;
-    position: fixed;
-    width: 100%;
-    height: 75px;
-    align-items: center;
-    background-color: var(--header-bg);
-      box-shadow: 5px 5px 15px rgba(71, 71, 71, 0.596);
-    z-index: 1000;
-    transition: background-color 0.3s ease;
+header { /* фиксированная верхняя панель сайта */
+    display: flex; /* включаем flex-раскладку */
+    top: 0; /* прижимаем к верху */
+    left: 0; /* прижимаем к левому краю */
+    flex-direction: row; /* элементы в строку */
+    position: fixed; /* фиксируем хедер при скролле */
+    width: 100%; /* на всю ширину экрана */
+    height: 75px; /* высота хедера */
+    align-items: center; /* выравнивание по вертикали */
+    background-color: var(--header-bg); /* фон через переменную темы */
+    box-shadow: 5px 5px 15px rgba(71, 71, 71, 0.596); /* тень под хедером */
+    z-index: 1000; /* поверх остальных элементов */
+    transition: background-color 0.3s ease; /* плавная смена темы */
 }
 
-.menu {
-    align-items: center;
-    flex-grow: 1;
+.menu { /* блок меню */
+    align-items: center; /* вертикальное выравнивание */
+    flex-grow: 1; /* занимает всё свободное пространство */
 }
 
-.menu ul {
-    align-items: center;
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
+.menu ul { /* список меню */
+    align-items: center; /* центрирование элементов */
+    display: flex; /* горизонтальное меню */
+    gap: 20px; /* расстояние между пунктами */
+    list-style: none; /* убираем точки */
+    margin: 0; /* убираем отступы */
 }
 
-.menu li {
-  align-items: center;
-  margin-right: 20px;
+.menu li { /* каждый пункт меню */
+  align-items: center; /* выравнивание */
+  margin-right: 20px; /* отступ справа */
 }
 
-.menu li:last-child {
-  margin-right: 0;
+.menu li:last-child { /* последний пункт меню */
+  margin-right: 0; /* убираем лишний отступ */
 }
 
-.menu a {
-    color: #f1f5f9;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.menu a { /* ссылки меню */
+    color: #f1f5f9; /* цвет текста */
+    text-decoration: none; /* убираем подчёркивание */
+    transition: color 0.3s ease; /* плавное изменение цвета */
 }
 
-.burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    background: none;
-    border: none;
-    padding: 0;
+.burger { /* кнопка бургер-меню */
+    display: none; /* скрыта на десктопе */
+    flex-direction: column; /* линии в колонку */
+    cursor: pointer; /* курсор-рука */
+    gap: 5px; /* расстояние между полосками */
+    background: none; /* без фона */
+    border: none; /* без рамки */
+    padding: 0; /* без отступов */
 }
 
-.burger span {
-    width: 25px;
-    height: 3px;
-    background: #f1f5f9;
-    display: block;
-    transition: 0.3s;
+.burger span { /* полоски бургер-иконки */
+    width: 25px; /* ширина полоски */
+    height: 3px; /* высота полоски */
+    background: #f1f5f9; /* цвет полосок */
+    display: block; /* блочный элемент */
+    transition: 0.3s; /* анимация */
 }
 
-.burger--active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+.burger--active span:nth-child(1) { /* первая полоска при активном состоянии */
+    transform: rotate(45deg) translate(6px, 6px); /* поворот в крест */
 }
 
-.burger--active span:nth-child(2) {
-    opacity: 0;
+.burger--active span:nth-child(2) { /* средняя полоска */
+    opacity: 0; /* скрываем */
 }
 
-.burger--active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -7px);
+.burger--active span:nth-child(3) { /* нижняя полоска */
+    transform: rotate(-45deg) translate(6px, -7px); /* поворот в крест */
 }
 
-.logo {
-  margin-right: 30px; 
-  margin-left: 30px;
-  
+.logo { /* блок логотипа */
+  margin-right: 30px; /* отступ справа */
+  margin-left: 30px; /* отступ слева */
 }
 
-.logo img {
-  transition: transform 1.3s ease;
+.logo img { /* изображение логотипа */
+  transition: transform 1.3s ease; /* плавная анимация */
 }
 
-.logo img:hover{
-  transform: rotate(360deg);
+.logo img:hover { /* hover на логотип */
+  transform: rotate(360deg); /* полный оборот */
 }
 
 .menu a,
-.menu .active {
-  display: block;
-  padding: 8px 10px;
-  text-transform: uppercase;
-  letter-spacing: .27em;
+.menu .active { /* ссылки меню и активный пункт */
+  display: block; /* блочный элемент */
+  padding: 8px 10px; /* внутренние отступы */
+  text-transform: uppercase; /* ВСЕ ЗАГЛАВНЫЕ */
+  letter-spacing: .27em; /* расстояние между буквами */
 }
 
-.ul li {
-  transition: all 0.3s ease; 
-  list-style: none;
+.ul li { /* (ошибка/лишний селектор, но комментируем как есть) */
+  transition: all 0.3s ease; /* плавные изменения */
+  list-style: none; /* убираем маркеры */
 }
 
-ul li:hover {
-  background-color: var(--hover-bg);
-  color: var(--text-primary);
-  transform: scale(1.05);
-  cursor: pointer;
-  border-radius: 50px;
+ul li:hover { /* hover на пункты списка */
+  background-color: var(--hover-bg); /* подсветка */
+  color: var(--text-primary); /* цвет текста */
+  transform: scale(1.05); /* увеличение */
+  cursor: pointer; /* курсор */
+  border-radius: 50px; /* округление */
 }
 
-.toggle-switch {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  margin-right: 20px;
-  --light: var(--toggle-light);
-  --dark: var(--toggle-dark);
-  --link: var(--accent);
-  --link-hover: var(--accent);
+.toggle-switch { /* контейнер переключателя темы */
+  position: relative; /* относительное позиционирование */
+  width: 60px; /* ширина */
+  height: 30px; /* высота */
+  margin-right: 20px; /* отступ справа */
+  --light: var(--toggle-light); /* локальная переменная светлого цвета */
+  --dark: var(--toggle-dark); /* локальная переменная тёмного цвета */
+  --link: var(--accent); /* акцент */
+  --link-hover: var(--accent); /* hover акцент */
 }
 
-.switch-label {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  background-color: var(--dark);
-  border-radius: 15px;
-  cursor: pointer;
-  border: 2px solid var(--accent);
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px var(--shadow);
+.switch-label { /* фон переключателя */
+  position: absolute; /* внутри контейнера */
+  width: 100%; /* на всю ширину */
+  height: 30px; /* высота */
+  background-color: var(--dark); /* фон */
+  border-radius: 15px; /* скругление */
+  cursor: pointer; /* курсор */
+  border: 2px solid var(--accent); /* рамка */
+  transition: all 0.3s ease; /* плавность */
+  box-shadow: 0 2px 8px var(--shadow); /* тень */
 }
 
-.checkbox {
-  position: absolute;
-  display: none;
+.checkbox { /* скрытый input */
+  position: absolute; /* позиционирование */
+  display: none; /* скрываем чекбокс */
 }
 
-.slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.slider { /* движущийся кружок */
+  position: absolute; /* внутри переключателя */
+  width: 100%; /* размер */
+  height: 100%; /* размер */
+  border-radius: 15px; /* скругление */
+  -webkit-transition: 0.3s; /* плавность */
+  transition: 0.3s; /* плавность */
 }
 
-.checkbox:checked ~ .slider {
-  background-color: var(--light);
+.checkbox:checked ~ .slider { /* состояние включённой темы */
+  background-color: var(--light); /* светлый фон */
 }
 
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  -webkit-box-shadow: inset 8px -3px 0px 0px var(--light);
-  box-shadow: inset 8px -3px 0px 0px var(--light);
-  background-color: var(--accent);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.slider::before { /* сам кружок переключателя */
+  content: ""; /* псевдоэлемент */
+  position: absolute; /* позиция */
+  top: 6px; /* сверху */
+  left: 6px; /* слева */
+  width: 16px; /* ширина */
+  height: 16px; /* высота */
+  border-radius: 50%; /* круг */
+  -webkit-box-shadow: inset 8px -3px 0px 0px var(--light); /* эффект */
+  box-shadow: inset 8px -3px 0px 0px var(--light); /* эффект */
+  background-color: var(--accent); /* цвет */
+  -webkit-transition: 0.3s; /* плавность */
+  transition: 0.3s; /* плавность */
 }
 
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(30px);
-  -ms-transform: translateX(30px);
-  transform: translateX(30px);
-  background-color: var(--accent);
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.checkbox:checked ~ .slider::before { /* переключение кружка */
+  -webkit-transform: translateX(30px); /* движение вправо */
+  -ms-transform: translateX(30px); /* для IE */
+  transform: translateX(30px); /* движение */
+  background-color: var(--accent); /* цвет */
+  -webkit-box-shadow: none; /* убираем тень */
+  box-shadow: none; /* убираем тень */
 }

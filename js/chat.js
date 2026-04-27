@@ -1,23 +1,23 @@
 (function() {
-    'use strict';
+    'use strict'; // Включение строгого режима JavaScript
 
-    const chatToggleBtn = document.getElementById('chatToggleBtn');
-    const chatWindow = document.getElementById('chatWindow');
-    const chatMessages = document.getElementById('chatMessages');
-    const chatInput = document.getElementById('chatInput');
-    const chatSendBtn = document.getElementById('chatSendBtn');
-    const chatCloseBtn = document.getElementById('chatCloseBtn');
-    const chatClearBtn = document.getElementById('chatClearBtn');
-    const chatBadge = document.getElementById('chatBadge');
+    const chatToggleBtn = document.getElementById('chatToggleBtn'); // Кнопка открытия/закрытия чата
+    const chatWindow = document.getElementById('chatWindow'); // Окно чата
+    const chatMessages = document.getElementById('chatMessages'); // Контейнер сообщений
+    const chatInput = document.getElementById('chatInput'); // Поле ввода
+    const chatSendBtn = document.getElementById('chatSendBtn'); // Кнопка отправки
+    const chatCloseBtn = document.getElementById('chatCloseBtn'); // Кнопка закрытия
+    const chatClearBtn = document.getElementById('chatClearBtn'); // Кнопка очистки
+    const chatBadge = document.getElementById('chatBadge'); // Индикатор непрочитанных сообщений
 
-    let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
-    let isOpen = false;
-    let unreadCount = 0;
+    let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || []; // Загрузка истории из localStorage
+    let isOpen = false; // Флаг состояния чата (открыт/закрыт)
+    let unreadCount = 0; // Счётчик непрочитанных сообщений
 
-    const botResponses = [
+    const botResponses = [ // Массив возможных ответов бота
         {
-            keywords: ['привет', 'здравствуй', 'добрый', 'хай', 'hello', 'hi'],
-            response: 'Здравствуйте! 👋 Чем могу помочь?'
+            keywords: ['привет', 'здравствуй', 'добрый', 'хай', 'hello', 'hi'], // Ключевые слова
+            response: 'Здравствуйте! 👋 Чем могу помочь?' // Ответ
         },
         {
             keywords: ['услуг', 'ремонт', 'диагност', 'чистк', 'обслужив'],
@@ -49,145 +49,147 @@
         }
     ];
 
-    const defaultResponse = 'Извините, я не совсем понял. 🤔 Попробуйте спросить об услугах, товарах, ценах или контактах.';
+    const defaultResponse = 'Извините, я не совсем понял. 🤔 Попробуйте спросить об услугах, товарах, ценах или контактах.'; // Ответ по умолчанию
 
-    function addMessage(text, type) {
-        const messageEl = document.createElement('div');
-        messageEl.classList.add('message', `message-${type}`);
-        messageEl.textContent = text;
-        chatMessages.appendChild(messageEl);
-        scrollToBottom();
+    function addMessage(text, type) { // Функция добавления сообщения
+        const messageEl = document.createElement('div'); // Создание элемента div
+        messageEl.classList.add('message', `message-${type}`); // Добавление CSS-классов
+        messageEl.textContent = text; // Установка текста сообщения
+        chatMessages.appendChild(messageEl); // Добавление в DOM
+        scrollToBottom(); // Прокрутка вниз
 
-        chatHistory.push({ text, type, time: Date.now() });
-        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        chatHistory.push({ text, type, time: Date.now() }); // Добавление в историю
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory)); // Сохранение в localStorage
     }
 
-    function scrollToBottom() {
+    function scrollToBottom() { // Прокрутка к последнему сообщению
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    function getBotResponse(userMessage) {
-        const lowerMessage = userMessage.toLowerCase();
+    function getBotResponse(userMessage) { // Получение ответа бота
+        const lowerMessage = userMessage.toLowerCase(); // Приведение к нижнему регистру
 
-        for (const item of botResponses) {
-            for (const keyword of item.keywords) {
-                if (lowerMessage.includes(keyword)) {
-                    return item.response;
+        for (const item of botResponses) { // Перебор всех шаблонов
+            for (const keyword of item.keywords) { // Перебор ключевых слов
+                if (lowerMessage.includes(keyword)) { // Проверка наличия слова
+                    return item.response; // Возврат найденного ответа
                 }
             }
         }
 
-        return defaultResponse;
+        return defaultResponse; // Возврат ответа по умолчанию
     }
 
-    function showTyping() {
-        const typingEl = document.createElement('div');
-        typingEl.classList.add('typing-indicator');
-        typingEl.id = 'typingIndicator';
-        typingEl.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-        chatMessages.appendChild(typingEl);
-        scrollToBottom();
+    function showTyping() { // Показ индикатора "печатает"
+        const typingEl = document.createElement('div'); // Создание элемента
+        typingEl.classList.add('typing-indicator'); // Добавление класса
+        typingEl.id = 'typingIndicator'; // Установка ID
+        typingEl.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>'; // HTML анимации
+        chatMessages.appendChild(typingEl); // Добавление в чат
+        scrollToBottom(); // Прокрутка
     }
 
-    function hideTyping() {
-        const typingEl = document.getElementById('typingIndicator');
-        if (typingEl) typingEl.remove();
+    function hideTyping() { // Удаление индикатора
+        const typingEl = document.getElementById('typingIndicator'); // Поиск элемента
+        if (typingEl) typingEl.remove(); // Удаление, если найден
     }
 
-    function sendMessage() {
-        const text = chatInput.value.trim();
-        if (!text) return;
+    function sendMessage() { // Отправка сообщения
+        const text = chatInput.value.trim(); // Получение текста без пробелов
+        if (!text) return; // Проверка на пустое сообщение
 
-        addMessage(text, 'user');
-        chatInput.value = '';
-        chatInput.style.height = 'auto';
+        addMessage(text, 'user'); // Добавление сообщения пользователя
+        chatInput.value = ''; // Очистка поля
+        chatInput.style.height = 'auto'; // Сброс высоты поля
 
-        showTyping();
-        const delay = Math.random() * 700 + 800; 
-        setTimeout(() => {
-            hideTyping();
-            const botResponse = getBotResponse(text);
-            addMessage(botResponse, 'bot');
+        showTyping(); // Показ индикатора
 
+        const delay = Math.random() * 700 + 800; // Случайная задержка ответа
 
-            if (!isOpen) {
-                unreadCount++;
-                updateBadge();
+        setTimeout(() => { // Таймер задержки
+            hideTyping(); // Удаление индикатора
+
+            const botResponse = getBotResponse(text); // Получение ответа
+            addMessage(botResponse, 'bot'); // Добавление ответа
+
+            if (!isOpen) { // Если чат закрыт
+                unreadCount++; // Увеличение счётчика
+                updateBadge(); // Обновление индикатора
             }
         }, delay);
     }
 
-    function updateBadge() {
-        if (unreadCount > 0) {
-            chatBadge.textContent = unreadCount;
-            chatBadge.style.display = 'flex';
+    function updateBadge() { // Обновление бейджа
+        if (unreadCount > 0) { // Если есть непрочитанные
+            chatBadge.textContent = unreadCount; // Установка числа
+            chatBadge.style.display = 'flex'; // Показ
         } else {
-            chatBadge.style.display = 'none';
+            chatBadge.style.display = 'none'; // Скрытие
         }
     }
 
-    function openChat() {
-        isOpen = true;
-        chatWindow.classList.add('chat-open');
-        unreadCount = 0;
-        updateBadge();
-        chatInput.focus();
-        scrollToBottom();
+    function openChat() { // Открытие чата
+        isOpen = true; // Установка состояния
+        chatWindow.classList.add('chat-open'); // Добавление класса
+        unreadCount = 0; // Сброс счётчика
+        updateBadge(); // Обновление бейджа
+        chatInput.focus(); // Фокус на вводе
+        scrollToBottom(); // Прокрутка
     }
 
-    function closeChat() {
-        isOpen = false;
-        chatWindow.classList.remove('chat-open');
+    function closeChat() { // Закрытие чата
+        isOpen = false; // Смена состояния
+        chatWindow.classList.remove('chat-open'); // Удаление класса
     }
 
-    function clearHistory() {
-        chatHistory = [];
-        localStorage.removeItem('chatHistory');
-        chatMessages.innerHTML = '';
-        addMessage('История очищена. Чем могу помочь?', 'bot');
+    function clearHistory() { // Очистка истории
+        chatHistory = []; // Очистка массива
+        localStorage.removeItem('chatHistory'); // Удаление из localStorage
+        chatMessages.innerHTML = ''; // Очистка интерфейса
+        addMessage('История очищена. Чем могу помочь?', 'bot'); // Сообщение от бота
     }
 
-    function renderHistory() {
-        chatMessages.innerHTML = '';
-        if (chatHistory.length === 0) {
+    function renderHistory() { // Отрисовка истории
+        chatMessages.innerHTML = ''; // Очистка контейнера
+
+        if (chatHistory.length === 0) { // Если истории нет
             addMessage('Привет! 👋 Я чат-помощник. Спросите об услугах, товарах, ценах или контактах.', 'bot');
         } else {
-            chatHistory.forEach(msg => {
-                const messageEl = document.createElement('div');
-                messageEl.classList.add('message', `message-${msg.type}`);
-                messageEl.textContent = msg.text;
-                chatMessages.appendChild(messageEl);
+            chatHistory.forEach(msg => { // Перебор сообщений
+                const messageEl = document.createElement('div'); // Создание элемента
+                messageEl.classList.add('message', `message-${msg.type}`); // Классы
+                messageEl.textContent = msg.text; // Текст
+                chatMessages.appendChild(messageEl); // Добавление
             });
-            scrollToBottom();
+            scrollToBottom(); // Прокрутка
         }
     }
 
-    function autoResize() {
-        chatInput.style.height = 'auto';
-        chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
+    function autoResize() { // Авто-изменение размера поля ввода
+        chatInput.style.height = 'auto'; // Сброс высоты
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px'; // Ограничение до 100px
     }
 
-    chatToggleBtn.addEventListener('click', () => {
+    chatToggleBtn.addEventListener('click', () => { // Обработчик кнопки открытия/закрытия
         if (isOpen) {
-            closeChat();
+            closeChat(); // Закрытие
         } else {
-            openChat();
+            openChat(); // Открытие
         }
     });
 
-    chatCloseBtn.addEventListener('click', closeChat);
-    chatClearBtn.addEventListener('click', clearHistory);
+    chatCloseBtn.addEventListener('click', closeChat); // Закрытие по кнопке
+    chatClearBtn.addEventListener('click', clearHistory); // Очистка истории
+    chatSendBtn.addEventListener('click', sendMessage); // Отправка по кнопке
 
-    chatSendBtn.addEventListener('click', sendMessage);
-
-    chatInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            sendMessage();
+    chatInput.addEventListener('keydown', (e) => { // Обработка нажатия клавиш
+        if (e.key === 'Enter' && !e.shiftKey) { // Enter без Shift
+            e.preventDefault(); // Отмена переноса строки
+            sendMessage(); // Отправка сообщения
         }
     });
 
-    chatInput.addEventListener('input', autoResize);
+    chatInput.addEventListener('input', autoResize); // Авто-ресайз поля
 
-    renderHistory();
+    renderHistory(); // Инициализация чата при загрузке
 })();

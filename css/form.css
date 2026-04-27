@@ -1,101 +1,106 @@
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+.modal { /* затемнённый фон модального окна */
+  display: none; /* скрыто по умолчанию */
+  position: fixed; /* фиксируется поверх страницы */
+  z-index: 1000; /* поверх всех элементов */
+  left: 0; /* прижато к левому краю */
+  top: 0; /* прижато к верхнему краю */
+  width: 100%; /* на всю ширину экрана */
+  height: 100%; /* на всю высоту экрана */
+  background: rgba(0,0,0,0.6); /* затемнение фона */
 }
 
-.modal-content {
-  background: var(--bg-secondary);
-  margin: 10% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 10px;
-  position: relative;
-  animation: fadeIn 0.3s;
-  color: var(--text-primary);
+.modal-content { /* само окно модалки */
+  background: var(--bg-secondary); /* фон окна */
+  margin: 10% auto; /* центрирование по горизонтали + отступ сверху */
+  padding: 20px; /* внутренние отступы */
+  width: 90%; /* адаптивная ширина */
+  max-width: 400px; /* максимальная ширина */
+  border-radius: 10px; /* скругление углов */
+  position: relative; /* для позиционирования кнопки закрытия */
+  animation: fadeIn 0.3s; /* анимация появления */
+  color: var(--text-primary); /* цвет текста */
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+@keyframes fadeIn { /* анимация появления окна */
+  from {
+    opacity: 0; /* старт прозрачный */
+    transform: translateY(-20px); /* старт выше */
+  }
+  to {
+    opacity: 1; /* становится видимым */
+    transform: translateY(0); /* возвращается на место */
+  }
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
-  cursor: pointer;
+.close { /* кнопка закрытия (крестик) */
+  position: absolute; /* позиционируется внутри modal-content */
+  top: 10px; /* отступ сверху */
+  right: 15px; /* отступ справа */
+  font-size: 22px; /* размер крестика */
+  cursor: pointer; /* курсор-рука */
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.contact-form { /* форма обратной связи */
+  display: flex; /* flex-контейнер */
+  flex-direction: column; /* элементы в колонку */
+  gap: 10px; /* расстояние между элементами */
 }
 
 .contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.contact-form textarea { /* поля ввода и текстовое поле */
+  padding: 10px; /* внутренние отступы */
+  border: 1px solid #ccc; /* светлая рамка */
+  border-radius: 5px; /* скругление */
 }
 
-.contact-form button {
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.contact-form button { /* кнопка отправки формы */
+  padding: 10px; /* отступы */
+  background: #007bff; /* синий фон */
+  color: white; /* белый текст */
+  border: none; /* без рамки */
+  border-radius: 5px; /* скругление */
+  cursor: pointer; /* курсор */
 }
 
-.contact-form button:hover {
-  background: #0056b3;
+.contact-form button:hover { /* hover эффект кнопки */
+  background: #0056b3; /* более тёмный синий */
 }
 
-.error {
-  color: red;
-  font-size: 14px;
+.error { /* блок ошибок */
+  color: red; /* красный текст */
+  font-size: 14px; /* размер текста */
 }
 
-.error-field {
-  border: 2px solid red !important;
+.error-field { /* подсветка неправильного поля */
+  border: 2px solid red !important; /* красная рамка (перебивает другие стили) */
 }
 
-.but button {
-  padding: 17px 40px;
-  border-radius: 50px;
-  margin-bottom: 13px;
-  cursor: pointer;
-  border: 0;
-  color: #fff;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.5s ease;
+.but button { /* кнопка "обратная связь" */
+  padding: 17px 40px; /* внутренние отступы */
+  border-radius: 50px; /* сильно скруглённая форма */
+  margin-bottom: 13px; /* отступ снизу */
+  cursor: pointer; /* курсор-рука */
+  border: 0; /* убираем рамку */
+  color: #fff; /* белый текст */
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px; /* лёгкая тень */
+  letter-spacing: 1.5px; /* расстояние между буквами */
+  text-transform: uppercase; /* все буквы заглавные */
+  font-size: 15px; /* размер текста */
+  transition: all 0.5s ease; /* плавные эффекты */
 }
 
-.but button:hover {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.but button:hover { /* hover эффект кнопки */
+  letter-spacing: 3px; /* увеличиваем расстояние букв */
+  background-color: hsl(261deg 80% 48%); /* фиолетовый фон */
+  color: hsl(0, 0%, 100%); /* белый текст */
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px; /* яркая тень */
 }
 
-.but button:active {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
+.but button:active { /* эффект при нажатии */
+  letter-spacing: 3px; /* фиксируем расстояние */
+  background-color: hsl(261deg 80% 48%); /* цвет остаётся */
+  color: hsl(0, 0%, 100%); /* белый текст */
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px; /* убираем тень */
+  transform: translateY(10px); /* "нажатие вниз" */
+  transition: 100ms; /* быстрая анимация */
 }
-

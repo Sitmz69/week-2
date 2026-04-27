@@ -1,188 +1,188 @@
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* планшеты и небольшие экраны */
 
-  .burger {
-      display: flex;
+  .burger { /* показываем бургер-меню */
+      display: flex; /* включаем отображение */
   }
 
-  .menu {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 100%;
-      background: var(--menu-bg);
-      transition: background-color 0.3s ease;
+  .menu { /* мобильное меню */
+      position: absolute; /* выпадает из потока */
+      top: 100%; /* под хедером */
+      right: 0; /* прижимаем вправо */
+      width: 100%; /* на всю ширину */
+      background: var(--menu-bg); /* фон меню */
+      transition: background-color 0.3s ease; /* плавная смена темы */
 
-      max-height: 0;
-      overflow: hidden;
-      transition: 0.3s;
+      max-height: 0; /* скрыто по высоте */
+      overflow: hidden; /* прячем содержимое */
+      transition: 0.3s; /* плавное раскрытие (перезаписывает предыдущий transition) */
   }
 
-  .menu ul {
-      flex-direction: column;
-      text-align: center;
-      padding: 20px 0;
+  .menu ul { /* список в мобильном меню */
+      flex-direction: column; /* вертикальное меню */
+      text-align: center; /* центр текста */
+      padding: 20px 0; /* отступы */
   }
 
-  .menu--open {
-      max-height: 300px;
+  .menu--open { /* открытое меню */
+      max-height: 300px; /* раскрытие по высоте */
   }
 
-  .container-about {
-      flex-direction: column;
-      text-align: center;
-
+  .container-about { /* блок "о нас" */
+      flex-direction: column; /* элементы друг под другом */
+      text-align: center; /* центр текста */
   }
 
-  .about-img {
-      margin-top: 20px;
-      max-width: 100%;
-      height: auto;
+  .about-img { /* контейнер изображения */
+      margin-top: 20px; /* отступ сверху */
+      max-width: 100%; /* ограничение ширины */
+      height: auto; /* авто-высота */
   }
 
   .card-ysl,
-  .card-tov {
-      width: 100%;
-      max-width: 300px;
+  .card-tov { /* карточки услуг и товаров */
+      width: 100%; /* на всю ширину */
+      max-width: 300px; /* ограничение */
   }
 
-  footer .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
+  footer .container { /* контейнер футера */
+    flex-direction: column; /* элементы в колонку */
+    text-align: center; /* центр текста */
+    gap: 20px; /* расстояние между блоками */
   }
 
-  .toggle-switch {
-    width: 50px;
-    height: 26px;
-    margin-right: 12px;
-    margin-left: auto;
+  .toggle-switch { /* переключатель темы */
+    width: 50px; /* уменьшение ширины */
+    height: 26px; /* уменьшение высоты */
+    margin-right: 12px; /* отступ справа */
+    margin-left: auto; /* прижим вправо */
   }
 
-  .switch-label {
-    height: 26px;
-    border-radius: 13px;
-    border: 2px solid var(--accent);
+  .switch-label { /* фон переключателя */
+    height: 26px; /* высота */
+    border-radius: 13px; /* скругление */
+    border: 2px solid var(--accent); /* рамка */
   }
 
-  .slider {
-    border-radius: 13px;
+  .slider { /* трек переключателя */
+    border-radius: 13px; /* скругление */
   }
 
-  .slider::before {
-    top: 5px;
-    left: 5px;
-    width: 14px;
-    height: 14px;
-    -webkit-box-shadow: inset 6px -2px 0px 0px var(--light);
-    box-shadow: inset 6px -2px 0px 0px var(--light);
+  .slider::before { /* круг переключателя */
+    top: 5px; /* позиция сверху */
+    left: 5px; /* позиция слева */
+    width: 14px; /* размер */
+    height: 14px; /* размер */
+    -webkit-box-shadow: inset 6px -2px 0px 0px var(--light); /* эффект */
+    box-shadow: inset 6px -2px 0px 0px var(--light); /* эффект */
   }
 
-  .checkbox:checked ~ .slider::before {
-    -webkit-transform: translateX(24px);
-    -ms-transform: translateX(24px);
-    transform: translateX(24px);
+  .checkbox:checked ~ .slider::before { /* состояние включения */
+    -webkit-transform: translateX(24px); /* движение */
+    -ms-transform: translateX(24px); /* IE */
+    transform: translateX(24px); /* движение */
   }
 
-  .about-img img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+  .about-img img { /* изображение в about */
+    width: 100%; /* адаптивная ширина */
+    max-width: 300px; /* ограничение */
+    height: auto; /* сохранение пропорций */
   }
 
-  header {
-    height: 60px;
+  header { /* шапка на мобильных */
+    height: 60px; /* уменьшенная высота */
   }
 
-  .logo img {
-    width: 50px;
-    height: 50px;
+  .logo img { /* логотип */
+    width: 50px; /* уменьшение */
+    height: 50px; /* уменьшение */
   }
 
-  .to-top-btn {
-    bottom: 15px;
-    left: 15px;
-    width: 45px;
-    height: 45px;
+  .to-top-btn { /* кнопка вверх */
+    bottom: 15px; /* ближе к краю */
+    left: 15px; /* ближе к краю */
+    width: 45px; /* меньше размер */
+    height: 45px; /* меньше размер */
   }
 
-  .to-top-btn img {
-    width: 20px;
-    height: 20px;
-    padding: 10px;
+  .to-top-btn img { /* стрелка вверх */
+    width: 20px; /* уменьшение */
+    height: 20px; /* уменьшение */
+    padding: 10px; /* отступ */
   }
 
-  .chat-toggle-btn {
-    width: 55px;
-    height: 55px;
-    bottom: 18px;
-    right: 18px;
+  .chat-toggle-btn { /* кнопка чата */
+    width: 55px; /* уменьшение */
+    height: 55px; /* уменьшение */
+    bottom: 18px; /* позиция снизу */
+    right: 18px; /* позиция справа */
   }
 
-  .chat-window {
-    bottom: 83px;
-    right: 18px;
+  .chat-window { /* окно чата */
+    bottom: 83px; /* над кнопкой */
+    right: 18px; /* справа */
   }
 }
 
-@media (max-width: 480px) {
-  .toggle-switch {
-    width: 46px;
-    height: 24px;
-    margin-right: 10px;
-    margin-left: auto;
+@media (max-width: 480px) { /* маленькие телефоны */
+
+  .toggle-switch { /* переключатель темы */
+    width: 46px; /* ещё меньше */
+    height: 24px; /* ещё меньше */
+    margin-right: 10px; /* меньше отступ */
+    margin-left: auto; /* прижим вправо */
   }
 
-  .switch-label {
-    height: 24px;
-    border-radius: 12px;
-    border: 2px solid var(--accent);
+  .switch-label { /* фон переключателя */
+    height: 24px; /* высота */
+    border-radius: 12px; /* скругление */
+    border: 2px solid var(--accent); /* рамка */
   }
 
-  .slider {
-    border-radius: 12px;
+  .slider { /* трек */
+    border-radius: 12px; /* скругление */
   }
 
-  .slider::before {
-    top: 4px;
-    left: 4px;
-    width: 14px;
-    height: 14px;
-    -webkit-box-shadow: inset 5px -2px 0px 0px var(--light);
-    box-shadow: inset 5px -2px 0px 0px var(--light);
+  .slider::before { /* круг */
+    top: 4px; /* позиция */
+    left: 4px; /* позиция */
+    width: 14px; /* размер */
+    height: 14px; /* размер */
+    -webkit-box-shadow: inset 5px -2px 0px 0px var(--light); /* эффект */
+    box-shadow: inset 5px -2px 0px 0px var(--light); /* эффект */
   }
 
-  .checkbox:checked ~ .slider::before {
-    -webkit-transform: translateX(22px);
-    -ms-transform: translateX(22px);
-    transform: translateX(22px);
+  .checkbox:checked ~ .slider::before { /* включённое состояние */
+    -webkit-transform: translateX(22px); /* движение */
+    -ms-transform: translateX(22px); /* IE */
+    transform: translateX(22px); /* движение */
   }
 
-  .chat-window {
-    width: calc(100vw - 20px);
-    right: 10px;
-    bottom: 80px;
-    max-height: calc(100vh - 120px);
+  .chat-window { /* чат на маленьких экранах */
+    width: calc(100vw - 20px); /* почти на весь экран */
+    right: 10px; /* отступ справа */
+    bottom: 80px; /* над кнопкой */
+    max-height: calc(100vh - 120px); /* ограничение по высоте */
   }
 
-  .chat-toggle-btn {
-    width: 50px;
-    height: 50px;
-    bottom: 15px;
-    right: 15px;
+  .chat-toggle-btn { /* кнопка чата */
+    width: 50px; /* ещё меньше */
+    height: 50px; /* ещё меньше */
+    bottom: 15px; /* позиция */
+    right: 15px; /* позиция */
   }
 
-  .chat-icon {
-    width: 24px;
-    height: 24px;
+  .chat-icon { /* иконка чата */
+    width: 24px; /* размер */
+    height: 24px; /* размер */
   }
 
-  .chat-badge {
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
+  .chat-badge { /* бейдж уведомлений */
+    width: 18px; /* размер */
+    height: 18px; /* размер */
+    font-size: 10px; /* текст */
   }
 
-  .message {
-    max-width: 90%;
+  .message { /* сообщения чата */
+    max-width: 90%; /* шире сообщения */
   }
 }

@@ -1,44 +1,44 @@
 .about a,
-.about .active{
-  padding: 10px 8px;
-  margin: 5px;
-  border: 2px solid #1e293b;
-  border-radius: 50px;
-  text-transform: uppercase;
-  width: 150px;
-  height: auto;
+.about .active { /* ссылки и активные элементы внутри блока "about" */
+  padding: 10px 8px; /* внутренние отступы */
+  margin: 5px; /* внешний отступ */
+  border: 2px solid #1e293b; /* рамка */
+  border-radius: 50px; /* сильно скруглённые углы */
+  text-transform: uppercase; /* текст заглавными */
+  width: 150px; /* фиксированная ширина */
+  height: auto; /* высота по содержимому */
 }
 
-.about p{
-  padding-bottom: 15px;
+.about p { /* текстовые абзацы в блоке about */
+  padding-bottom: 15px; /* отступ снизу */
 }
 
-.about button {
-  margin: 8px;
-} 
-
-.about a {
-  transition: all 0.3s ease; 
-  list-style: none;
+.about button { /* кнопки внутри блока about */
+  margin: 8px; /* отступ вокруг кнопок */
 }
 
-.about a:hover {
-  background-color: #7c7c7c;
-  color: white;
-  transform: scale(1.05);
-  cursor: pointer;
-  border-radius: 50px;
+.about a { /* ссылки внутри about */
+  transition: all 0.3s ease; /* плавные анимации */
+  list-style: none; /* (лишнее для a, но оставляем как есть) */
 }
 
-.about-img  img{
-  width: 500px;
-  height: 500px;
-  border-radius: 50px;
-  flex: 1;
-  text-align: center;
-  transition: transform 1.3s ease;
+.about a:hover { /* hover эффект на ссылках */
+  background-color: #7c7c7c; /* серый фон */
+  color: white; /* белый текст */
+  transform: scale(1.05); /* лёгкое увеличение */
+  cursor: pointer; /* курсор-рука */
+  border-radius: 50px; /* скругление */
 }
 
-.about-img img:hover{
-  transform: rotate(5deg); 
+.about-img img { /* изображение в блоке about */
+  width: 500px; /* ширина изображения */
+  height: 500px; /* высота изображения */
+  border-radius: 50px; /* скругление углов */
+  flex: 1; /* гибкое поведение в flex-контейнере */
+  text-align: center; /* центрирование (не влияет на img, но оставлено) */
+  transition: transform 1.3s ease; /* плавная анимация */
+}
+
+.about-img img:hover { /* hover эффект изображения */
+  transform: rotate(5deg); /* лёгкий поворот */
 }

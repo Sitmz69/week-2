@@ -1,36 +1,36 @@
-footer{
-  min-height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  position: static;
-  align-items: center;
-  background-color: var(--header-bg);
-  color: #f1f5f9;
-  transition: background-color 0.3s ease;
+footer { /* основной блок подвала сайта */
+  min-height: 100%; /* минимальная высота (чаще избыточно для footer) */
+  width: 100%; /* на всю ширину */
+  display: flex; /* включаем flex-раскладку */
+  flex-direction: row; /* элементы в строку */
+  position: static; /* стандартное позиционирование */
+  align-items: center; /* выравнивание по вертикали */
+  background-color: var(--header-bg); /* фон (используется как у хедера) */
+  color: #f1f5f9; /* цвет текста */
+  transition: background-color 0.3s ease; /* плавная смена темы */
 }
 
-footer h2 {
-  color: #f1f5f9;
-  transition: color 0.3s ease;
-  margin-bottom: 10px;
+footer h2 { /* заголовки в футере */
+  color: #f1f5f9; /* белый цвет */
+  transition: color 0.3s ease; /* плавность */
+  margin-bottom: 10px; /* отступ снизу */
 }
 
-footer p {
-  color: #f1f5f9;
-  margin: 7px;
+footer p { /* параграфы в футере */
+  color: #f1f5f9; /* белый текст */
+  margin: 7px; /* отступы */
 }
 
-footer img {
-  height: 50px;
-  width: 50px;
+footer img { /* иконки/картинки в футере */
+  height: 50px; /* высота */
+  width: 50px; /* ширина */
 }
 
-.knop img {
-  transition: all 0.3s ease; 
+.knop img { /* иконки соцсетей/кнопок */
+  transition: all 0.3s ease; /* плавная анимация */
 }
 
-.knop img:hover {
-  transform: scale(1.15);
-  cursor: pointer;
+.knop img:hover { /* hover эффект на иконках */
+  transform: scale(1.15); /* увеличение */
+  cursor: pointer; /* курсор-рука */
 }
